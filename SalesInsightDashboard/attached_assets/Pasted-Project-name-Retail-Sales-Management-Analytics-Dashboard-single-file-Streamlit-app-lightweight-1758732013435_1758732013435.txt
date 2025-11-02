@@ -1,0 +1,56 @@
+Project name: Retail Sales Management & Analytics Dashboard (single-file Streamlit app + lightweight supporting files).
+Goal: Build a professional, stylish, fully functional retail sales manager + analytics dashboard that runs on Replit FREE without external paid services. Keep everything inside one project so anyone can extend it later.
+
+REQUIREMENTS & CONSTRAINTS
+1. Platform compatibility
+   - The app must run on Replit Free. Do NOT use paid Replit features or external paid APIs.
+   - Provide a .replit file with a run command that works on Replit Free:
+       run = "streamlit run app.py --server.port $PORT --server.enableCORS false"
+   - Provide requirements.txt for Python packages.
+
+2. Project structure
+   - app.py (single primary file; modular functions inside it).
+   - requirements.txt (at least: streamlit, pandas, plotly, numpy).
+   - .replit (run command as above).
+   - README.md with run instructions and feature list.
+   - A small SQLite file database.db created at runtime.
+
+3. Tech stack
+   - Python, sqlite3, pandas, streamlit, plotly.express, numpy.
+   - No heavy dependencies.
+
+4. UI & UX design
+   - Use Streamlit with st.set_page_config(layout="wide").
+   - Sidebar navigation: Dashboard, Manage Data, Reports/Export, Settings.
+   - Dashboard shows 4 KPI cards: Total Sales, Monthly Revenue, Total Customers, Best-selling Product.
+   - Use Plotly charts: sales trend (line), top products (bar), sales by category (donut), customer demographics (histogram + gender pie).
+   - Interactive filters: date range, category, customer.
+   - Stylish but simple design: color themes, headers, card-style KPIs.
+
+5. CRUD & live updates
+   - Provide Add/Update/Delete forms for Products, Customers, and Sales.
+   - Display rows in data tables with inline edit/delete actions.
+   - All operations update SQLite and immediately refresh views (use st.session_state or st.experimental_rerun).
+   - New records must appear instantly in tables and analytics.
+
+6. Initialization
+   - On first run, create tables if they don’t exist.
+   - Insert small demo data (5 products, 8 customers, 20 sales).
+   - Ensure initialization is idempotent (check before inserting).
+
+7. Analytics & extras
+   - KPIs computed from DB.
+   - Low-stock alerts in Products table (highlight rows where stock <= threshold).
+   - Export filtered reports to CSV.
+   - Optional: Simple sales forecast (numpy.polyfit or scikit-learn if available).
+
+8. Code quality
+   - Organize app with functions like init_db(), get_products(), add_product(), render_dashboard(), etc.
+   - Add helpful comments and clear structure.
+   - Mark extension points with # === EXTEND HERE === for easy future updates.
+
+9. Deliverables
+   - app.py with the full Streamlit app.
+   - requirements.txt listing dependencies.
+   - .replit with working run command.
+   - README.md with run instructions.
