@@ -1,4 +1,4 @@
-#Sales Insight Dashboard
+🛍️ Sales Insight Dashboard
 
 A comprehensive full-stack web application for managing retail sales, inventory, and customer analytics, built entirely in Python with Streamlit.
 
